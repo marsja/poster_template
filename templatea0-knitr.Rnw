@@ -1,0 +1,168 @@
+%----------------------------------------------------------------------------------------
+%  PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+% !Rnw weave = knitr
+\documentclass[a0,portrait]{a0poster}
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+%\usepackage{times} % Use the times font
+\usepackage{helvet} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures'
+%----------------------------------------------------------------------------------------
+%  Packages addaded by Erik Marsja to fit the UmU-style and to use APA 6th Ed. Citations 
+%----------------------------------------------------------------------------------------
+\usepackage[percent]{overpic} %For the UmU logotype under the 
+\usepackage{apacite} %To cite with APA 6ed Style
+\usepackage{scrextend}
+\usepackage{tabulary}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%----------------------------------------------------------------------------------------
+%  Packages for creating text and adding links (hyperref). 
+%  Can be deleted when creating a "real" poster.
+%----------------------------------------------------------------------------------------
+
+\usepackage{blindtext}
+%----------------------------------------------------------------------------------------
+%  Document starts after \begin 
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% 
+
+\begin{overpic}[width=1\linewidth]{header} %Named the umu header 'header.png'
+\begin{minipage}[b]{1\linewidth}
+\begin{addmargin}[12em]{2em}%
+\Huge\color{White} \textbf{Awesome attention capturing title!}\\[0.6cm]
+\Large \textbf{Erik Marsja$^{a}$, Author Two$^{a}$, Author Three$^{a}$ \& Author Four$^{a,b}$}\\[0.4cm] % Author(s)
+\large $^{a}$Department of Psychology, Ume\aa{} University, Ume\aa{}, Sweden, and $^{b}$Second Affiliation, Another University, UK. \\[0.2cm] % University/organization
+\large \texttt{erik@marsja.se}\\
+\end{addmargin}
+\end{minipage}
+\end{overpic}
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the introduction
+
+\section*{Introduction}
+\Blindtext
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Aim}
+Create a template (a0 size) using with the Ume\aa{} University template. Template is based on the a0poster class \cite{Kettl}.
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+\color{black}
+\section*{Method}
+\blindtext
+
+\begin{wraptable}{l}{.5\linewidth} % Left or right alignment is specified in the first bracket, the width of the table is in the second
+
+\captionof{table}{\color{Black}Number of trials for each manipulation, task, and block.}
+
+\begin{tabular*}{1\linewidth}{@{\extracolsep{\fill}}lcc}\hline
+          & \multicolumn{2}{c}{Task} \\ \cline{2-3}
+Manipulation  & Task 1 & Task 2   \\ \hline
+One     & 4    & 4     \\
+Two         &   4       &    4        \\
+Three    & 4    & 4     \\ \hline
+Trials per  block         &    12       &  12       \\ 
+Trials per task & 3 & 3\\ \hline
+  & 36 & 36 \\ \cline{2-3}
+  &  \multicolumn{2}{c}{\textbf{72}}
+\end{tabular*}
+\end{wraptable}
+\blindtext
+
+\blindtext
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+\section*{Results}
+\Blindtext  
+\begin{center}\vspace{1cm}
+\captionof{table}{\color{Black}Mean responses across tasks and manipulation. Standard error in parentheses}
+\begin{tabular*}{.8\linewidth}{@{\extracolsep{\fill}}lcc}\hline
+          & \multicolumn{2}{c}{Task} \\ \cline{2-3}
+Manipulation & Task1  & Task two   \\ \hline
+One & 50.50 (0.58) & 50.79 (0.72)\\
+Two 2 & 60.39 (0.99) & 60.61 (1.03) \\
+Three 3 & 76.02 (1.37) & 75.42 (1.40) \\ \hline
+\end{tabular*}
+\end{center}\vspace{1cm}
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
+
+\section*{Conclusions}
+\blindtext
+
+\color{Black} % Set the color back to black for the rest of the content
+
+%----------------------------------------------------------------------------------------
+%	FORTHCOMING RESEARCH
+%----------------------------------------------------------------------------------------
+
+\section*{Forthcoming Research}
+\blindtext
+
+ %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{apacite} % Apa referencing. Use biblatex-apa when using package hyperref
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Contact}
+\begin{description}
+\item[Erik Marsja] 
+\item[Email:] erik@marsja
+\item[Phone:] +46 xx-xxxx
+\item[Web:] www.marsja.se
+\end{description}
+
+%----------------------------------------------------------------------------------------
+\end{multicols}
+\end{document}
